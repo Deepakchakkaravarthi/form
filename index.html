@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function myfunction(){
+            var venuevalue = document.forms["myforms"]["venue"].value;
+            var membersvalue = document.forms["myforms"]["members"].value;
+            var teamvalue = document.forms["myforms"]["team"].value;
+            var checkbox1value = document.forms["myforms"]["checkbox1"].value;
+            var radiobutton1value = document.forms["myforms"]["radiobutton1"].value;
+            var textarea1value = document.forms["myforms"]["textarea1"].value;
+
+            var venuevalue = venuevalue.length;
+            var membersvalue = membersvalue.length;
+            var teamvalue = teamvalue.length;
+            var checkbox1value = checkbox1value.length;
+            var radiobutton1value = radiobutton1value.length;
+            var textarea1value = textarea1value.length;
+
+            if (venuevalue == 0){
+                alert("Please enter more characters in first name");
+                return false;
+            }
+            if (membersvalue <= 10){
+                alert("Please enter more characters in last name");
+                return false;
+            }
+            if (teamvalue < 10){
+                alert("Please enter 8 characters in password field");
+                return false;
+            }
+            // document.write(checkbox1value);
+            // if (checkbox1value == 1){
+            //     alert("Please enter 8 characters in retype password field");
+            //     return false;
+            // }
+            // if (radiobutton1value == 0){
+            //     alert("password do not match");
+            //     return false;
+            // }
+            if (textarea1value <= 10){
+                alert("password do not match");
+                return false;
+            }
+            else{
+                alert("successful !!!")
+                return true;
+            }
+
+            document.write(eventvalue);
+            // alert("works fine");
+            console.log(checkbox1value);
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body bgcolor="grey">
+   <center><h1><u>Symposium feedback form</u></u></h1>
+    <h3></h3>
+    <form id="myforms">
+        <label for="event">Event Name:</label>
+        <select id="event">
+            <option value="IoT">IoT</option>
+            <option value="Robotics">Robot</option>
+            <option value="Deep learning">Deep</option>
+        </select><br>
+        <label for="venue">Enter Venue:</label>
+        <input type="text" id="venue"><br>
+        <label for="members">Enter Participants:</label>
+        <input type="text" id="members"><br>
+        <label for="team">Enter Group:</label>
+        <input type="text" id="team"><br>
+        <ol>
+            <li>
+                <label for="checkbox1">Did you think this venue was appropriate?</label>
+                <input type="checkbox" id="checkbox1" value="Yes" required>
+                <input type="checkbox" id="checkbox1" value="No" required>
+            </li>
+            <li>
+                <label for="radiobutton1">How would you rate any workshops attendence</label>
+                <input type="radio" id="radiobutton1" value="a" required>
+                <input type="radio" id="radiobutton1" value="e" required>
+                <input type="radio" id="radiobutton1" value="i" required>
+                <input type="radio" id="radiobutton1" value="o" required>
+                <input type="radio" id="radiobutton1" value="u" required>
+            </li>
+            <li>
+                <label for="textarea1">Send your valuable commands</label>
+                <textarea id="textarea1" rows="5" cols="50"></textarea>
+            </li>
+            <li>
+                <!-- <input type="button" value="submit" onclick="return myfunction()"> -->
+                <button onclick="return myfunction()" type="submit">Next</button>
+            </li>
+        </ol>
+
+    </form></center>
+</body>
+</html>
